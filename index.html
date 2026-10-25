@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mouse Over Demo</title>
+  <style>
+    body { text-align: center; font-family: Arial, sans-serif; }
+    img { width: 300px; }
+    #box { display: inline-block; padding: 20px; }
+    #box * { pointer-events: none; }
+  </style>
+</head>
+<body>
+
+  <div id="box">
+    <img id="pic" src="images/morning.jpg">
+    <h1 id="heading1">Hello! Good Morning</h1>
+    <h1 id="heading2" style="display:none">Bye! Good Night</h1>
+  </div>
+
+  <script>
+    var box = document.getElementById("box");
+    var pic = document.getElementById("pic");
+    var h1 = document.getElementById("heading1");
+    var h2 = document.getElementById("heading2");
+
+    box.addEventListener("mouseover", function () {
+      pic.src = "images/night.jpg";
+      h1.style.display = "none";
+      h2.style.display = "block";
+    });
+
+    box.addEventListener("mouseout", function () {
+      pic.src = "images/morning.jpg";
+      h1.style.display = "block";
+      h2.style.display = "none";
+    });
+  </script>
+
+</body>
+</html>
